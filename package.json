@@ -1,0 +1,52 @@
+{
+  "name": "@arcanea/gemini",
+  "version": "1.0.0",
+  "description": "Google Gemini integration for Arcanea Intelligence OS - Multi-modal Guardian agents with vision capabilities",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./vision": {
+      "types": "./dist/vision.d.ts",
+      "import": "./dist/vision.js"
+    }
+  },
+  "files": [
+    "dist",
+    "CLAUDE.md",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts src/vision.ts --format esm --dts --clean",
+    "dev": "tsup src/index.ts src/vision.ts --format esm --dts --watch",
+    "test": "vitest",
+    "lint": "eslint src/",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["arcanea", "gemini", "google", "ai", "multimodal", "vision", "guardians"],
+  "author": "FrankX <frank@frankx.ai>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankxai/gemini-arcanea.git"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
