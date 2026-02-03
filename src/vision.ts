@@ -18,6 +18,10 @@ export async function analyzeImage(
   imageData: string | Buffer,
   mode: VisionMode = 'general'
 ): Promise<VisionAnalysis> {
+  if (!imageData) {
+    throw new Error('Image data is required');
+  }
+
   const guardianMap: Record<VisionMode, string> = {
     design: 'Lyria',
     security: 'Lyssandria',
@@ -27,7 +31,8 @@ export async function analyzeImage(
 
   const guardian = guardianMap[mode];
 
-  // Placeholder for actual Gemini vision implementation
+  // TODO: Implement actual Gemini vision API integration
+  // This is a placeholder implementation
   return {
     description: `Image analyzed by ${guardian}`,
     elements: [],
