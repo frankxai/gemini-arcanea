@@ -1,6 +1,6 @@
 # Gemini Arcanea Integration
 
-> *"Through the Gates we rise. With the Guardians we create."*
+> _"Through the Gates we rise. With the Guardians we create."_
 
 ## Overview
 
@@ -40,6 +40,7 @@ gemini-arcanea/
 **Support:** Aiyami (Crown), Shinkami (Orchestration)
 
 **Responsibilities:**
+
 - Gemini API integration
 - Vision processing
 - Multi-modal skill development
@@ -48,13 +49,16 @@ gemini-arcanea/
 ## Unique Capabilities
 
 ### Vision Guardian
+
 Gemini enables visual understanding:
+
 - Image analysis with Guardian context
 - Design critique (Lyria)
 - Security scan of screenshots (Lyssandria)
 - UI/UX review (Maylinn)
 
 ### Multi-Turn Conversations
+
 Extended context for complex tasks with Guardian routing.
 
 ## Development
@@ -79,4 +83,4 @@ This repo is part of the Arcanea Workspace Hub at `C:\Users\frank\arcanea-hub\ge
 
 ---
 
-*Guardians Alera (Voice) and Lyria (Sight) unite for multi-modal intelligence*
+_Guardians Alera (Voice) and Lyria (Sight) unite for multi-modal intelligence_

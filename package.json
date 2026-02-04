@@ -29,7 +29,15 @@
     "format:check": "prettier --check \"**/*.{js,ts,md,json}\"",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["arcanea", "gemini", "google", "ai", "multimodal", "vision", "guardians"],
+  "keywords": [
+    "arcanea",
+    "gemini",
+    "google",
+    "ai",
+    "multimodal",
+    "vision",
+    "guardians"
+  ],
   "author": "FrankX <frank@frankx.ai>",
   "license": "MIT",
   "repository": {

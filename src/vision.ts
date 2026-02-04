@@ -9,24 +9,24 @@ export interface VisionAnalysis {
   guardian: string;
 }
 
-export type VisionMode = 'design' | 'security' | 'accessibility' | 'general';
+export type VisionMode = "design" | "security" | "accessibility" | "general";
 
 /**
  * Analyze an image with Guardian context
  */
 export async function analyzeImage(
   imageData: string | Buffer,
-  mode: VisionMode = 'general'
+  mode: VisionMode = "general",
 ): Promise<VisionAnalysis> {
   if (!imageData) {
-    throw new Error('Image data is required');
+    throw new Error("Image data is required");
   }
 
   const guardianMap: Record<VisionMode, string> = {
-    design: 'Lyria',
-    security: 'Lyssandria',
-    accessibility: 'Maylinn',
-    general: 'Shinkami',
+    design: "Lyria",
+    security: "Lyssandria",
+    accessibility: "Maylinn",
+    general: "Shinkami",
   };
 
   const guardian = guardianMap[mode];
@@ -44,20 +44,26 @@ export async function analyzeImage(
 /**
  * Design critique with Lyria
  */
-export async function designCritique(imageData: string | Buffer): Promise<VisionAnalysis> {
-  return analyzeImage(imageData, 'design');
+export async function designCritique(
+  imageData: string | Buffer,
+): Promise<VisionAnalysis> {
+  return analyzeImage(imageData, "design");
 }
 
 /**
  * Security scan with Lyssandria
  */
-export async function securityScan(imageData: string | Buffer): Promise<VisionAnalysis> {
-  return analyzeImage(imageData, 'security');
+export async function securityScan(
+  imageData: string | Buffer,
+): Promise<VisionAnalysis> {
+  return analyzeImage(imageData, "security");
 }
 
 /**
  * Accessibility review with Maylinn
  */
-export async function accessibilityReview(imageData: string | Buffer): Promise<VisionAnalysis> {
-  return analyzeImage(imageData, 'accessibility');
+export async function accessibilityReview(
+  imageData: string | Buffer,
+): Promise<VisionAnalysis> {
+  return analyzeImage(imageData, "accessibility");
 }

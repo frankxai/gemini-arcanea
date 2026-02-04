@@ -7,8 +7,8 @@
  * @package @arcanea/gemini
  */
 
-export * from './guardians';
-export * from './vision';
+export * from "./guardians";
+export * from "./vision";
 
 export interface GeminiConfig {
   apiKey?: string;
@@ -18,9 +18,9 @@ export interface GeminiConfig {
 }
 
 export const defaultConfig: GeminiConfig = {
-  model: 'gemini-pro',
+  model: "gemini-pro",
   enableVision: true,
-  guardianDefault: 'Shinkami',
+  guardianDefault: "Shinkami",
 };
 
 /**
@@ -30,10 +30,14 @@ export async function initArcanea(config: GeminiConfig = {}): Promise<void> {
   const finalConfig = { ...defaultConfig, ...config };
 
   if (!finalConfig.apiKey && !process.env.GEMINI_API_KEY) {
-    throw new Error('Gemini API key required. Set GEMINI_API_KEY or pass apiKey in config.');
+    throw new Error(
+      "Gemini API key required. Set GEMINI_API_KEY or pass apiKey in config.",
+    );
   }
 
-  console.log(`Arcanea Gemini initialized with Guardian: ${finalConfig.guardianDefault}`);
+  console.log(
+    `Arcanea Gemini initialized with Guardian: ${finalConfig.guardianDefault}`,
+  );
   console.log(`Vision enabled: ${finalConfig.enableVision}`);
 }
 
