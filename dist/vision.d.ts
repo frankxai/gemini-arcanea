@@ -7,7 +7,7 @@ interface VisionAnalysis {
     suggestions: string[];
     guardian: string;
 }
-type VisionMode = 'design' | 'security' | 'accessibility' | 'general';
+type VisionMode = "design" | "security" | "accessibility" | "general";
 /**
  * Analyze an image with Guardian context
  */

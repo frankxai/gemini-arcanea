@@ -53,9 +53,13 @@ var defaultConfig = {
 async function initArcanea(config = {}) {
   const finalConfig = { ...defaultConfig, ...config };
   if (!finalConfig.apiKey && !process.env.GEMINI_API_KEY) {
-    throw new Error("Gemini API key required. Set GEMINI_API_KEY or pass apiKey in config.");
+    throw new Error(
+      "Gemini API key required. Set GEMINI_API_KEY or pass apiKey in config."
+    );
   }
-  console.log(`Arcanea Gemini initialized with Guardian: ${finalConfig.guardianDefault}`);
+  console.log(
+    `Arcanea Gemini initialized with Guardian: ${finalConfig.guardianDefault}`
+  );
   console.log(`Vision enabled: ${finalConfig.enableVision}`);
 }
 var index_default = {
