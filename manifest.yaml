@@ -1,0 +1,45 @@
+$schema: https://arcanea.ai/schema/overlay-manifest/v1.json
+
+name: gemini-arcanea
+version: 0.1.0
+description: |
+  Arcanea overlay for Google Gemini CLI. Teaches the gemini CLI about
+  Arcanea canon, voice, and multimodal workflows. BYOK (GOOGLE_API_KEY
+  or GEMINI_API_KEY) — use for 2M-context research, long-document
+  ingestion, multimodal prompts, and grounded analysis.
+
+surface: gemini-arcanea
+
+runtime:
+  binary: gemini
+  minVersion: 0.10.0
+  configDir: ~/.gemini
+
+install:
+  - step: copy
+    from: ./extensions
+    to: "{configDir}/extensions"
+    merge: true
+  - step: copy
+    from: ./settings.json
+    to: "{configDir}/settings.json"
+    merge: true
+
+routerSpec:
+  source: "@arcanea/router-spec"
+  reads:
+    - models
+    - tasks
+    - surfaces.gemini-arcanea
+
+dependencies:
+  "@arcanea/router-spec": ">=1.0.0"
+
+agents:
+  definitions: ./extensions
+  agentsMd: ./AGENTS.md
+
+preview:
+  commands:
+    - cmd: "gemini -p 'summarize this 500K-token codebase'"
+      description: "router-spec routes research.deep to gemini-3-pro via gemini-arcanea"
